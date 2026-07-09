@@ -1,5 +1,9 @@
 FROM python:3.11-slim
 
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8080
+
 WORKDIR /app
 
 COPY requirements.txt .
@@ -9,4 +13,5 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["python", "start.py"]
+# ENTRYPOINT força o Railway a iniciar pelo start.py mesmo se existir Start Command antigo com $PORT literal.
+ENTRYPOINT ["python", "/app/start.py"]
