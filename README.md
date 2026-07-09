@@ -1,4 +1,4 @@
-# Site Thiago Kodama
+# Thiago Kodama - Site Flask
 
 Site simples em Python Flask com a imagem principal na home.
 
@@ -6,15 +6,27 @@ Site simples em Python Flask com a imagem principal na home.
 
 ```bash
 pip install -r requirements.txt
-python app.py
+python start.py
 ```
 
-Acesse: http://localhost:5000
+Abra: `http://localhost:8080`
 
-## Railway
+## Subir no Railway
 
-O projeto já inclui `Procfile`, `requirements.txt`, `Dockerfile` e `mise.toml`.
+1. Suba estes arquivos no GitHub.
+2. No Railway, crie um novo projeto conectado ao repositório.
+3. O Railway vai detectar Python e iniciar com:
 
-No Railway, basta conectar o repositório do GitHub e fazer deploy.
+```bash
+python start.py
+```
 
-Observação: o `mise.toml` desativa a validação de atestação do Python para evitar o erro do Railway/Railpack: `No GitHub artifact attestations found for python@3.11.9`.
+Este projeto lê a variável `PORT` automaticamente. Se ela não existir, usa `8080`.
+
+## Arquivos importantes
+
+- `app.py` - aplicação Flask
+- `start.py` - inicialização compatível com Railway
+- `Procfile` - comando de start
+- `static/img/kodama.png` - imagem da home
+- `templates/index.html` - página principal
