@@ -38,12 +38,12 @@ body {
   .hero-image {
     min-height: 100svh;
     object-fit: cover;
-    object-position: 58% center;
+    object-position: center center;
   }
 }
 
 @media (max-width: 480px) {
   .hero-image {
-    object-position: 61% center;
+    object-position: center center;
   }
 }

@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thiago Kodama | Pré-candidato a Deputado Federal</title>
   <meta name="description" content="Thiago Kodama - Pré-candidato a Deputado Federal">
-  <link rel="preload" as="image" href="{{ url_for('static', filename='img/kodama.png') }}">
+  <link rel="preload" as="image" media="(min-width: 769px)" href="{{ url_for('static', filename='img/kodama.png') }}">
+  <link rel="preload" as="image" media="(max-width: 768px)" href="{{ url_for('static', filename='img/kodama-mobile.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
   <main class="hero" aria-label="Thiago Kodama - Pré-candidato a Deputado Federal">
     <picture>
+      <source media="(max-width: 768px)" srcset="{{ url_for('static', filename='img/kodama-mobile.png') }}">
       <img src="{{ url_for('static', filename='img/kodama.png') }}" alt="Thiago Kodama - Pré-candidato a Deputado Federal" class="hero-image">
     </picture>
   </main>
